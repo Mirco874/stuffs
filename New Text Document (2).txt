@@ -1,0 +1,49 @@
+git crear un git con perfil, 
+con rama main, 
+jarlar una rama llamada develop
+
+todo front end  fuerte y backend simple
+
+resfull api con orm
+CRUD, y una funcionalidad de parte tuya
+
+una funcionalidad con patron de diseño
+
+arquitectura mvc, clean, hexagonal
+
+
+FE:
+manejador de estados 
+manejo de peticiones asincronas
+css personalizado
+
+
+
+bonito? deployado?
+
+
+invitacion
+sistemas.cindev@gmail.com
+sistemas.cindev@gmail.com
+
+fecha limite: mañana hasta las 12 del medio dia
+
+readme de como empezar la ejecucion
+version de nodejs y react
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

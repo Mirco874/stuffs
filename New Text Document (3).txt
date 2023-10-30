@@ -1,0 +1,59 @@
+Perfil requerido:
+• Experiencia mínima de 3 años.
+• Experiencia con tecnología de desarrollo web back-end como API, bases de datos, mensajería asincrónica y computación en la nube (AWS).
+• Experiencia con Java 11 o superiorExperiencia con Lambdas, Streams, Completable Future, Optional, generics.
+• Experiencia en el desarrollo de API REST utilizando Spring Boot 2.X (reactivo) y habilidad en la especificación de API abierta (swagger).
+• Experiencia en el uso de servicios de AWS Aurora MySQL y AWS DynamoDB, AWS EKS, AWS MSK y AWS Batch.
+• Experiencia solida con RxJava, Spring Webflux, Reactor, Spring Data, Retrofit.
+• Experiencia escribiendo casos de prueba con framework JUnit, Mockito y Spock.
+• Experiencia de base de datos (relacional y no relacional).
+• Conocimiento en programación Java funcional y reactiva.
+• Conocimiento y experiencia en el uso de herramientas de integración, despliegue continua y procesos de automatización.
+• Deseable conocimiento en el uso de ElasticSearch, Kibana para monitorear y solucionar problemas de sistemas de aplicaciones.
+• Deseable experiencia en el manejo de contenedores con Docker y Docker Compose.
+
+
+
+
+
+
+Consideraciones:
+• Sin Ingles
+• 100% remoto
+
+
+
+SELECT  user_id, 
+		identity_card, 
+		full_name, 
+		home_address, 
+		phone_number, 
+		email, 
+		v.name as vaccine_name, 
+		doses, 
+		updated_date
+
+FROM 
+	(SELECT m.id AS user_id, 
+			m.identity_card as identity_card, 
+			m.name || ' ' || m.last_name AS full_name, 
+			m.home_address as home_address,
+			m.phone_number as phone_number, 
+			m.email as email,
+			uv.vaccine_id as vaccine_id,
+			uv.doses as doses, 
+			uv.updated_date as updated_date
+		FROM public.member m
+		LEFT JOIN public.user_vaccine uv
+		ON m.id =uv.user_id
+		WHERE m.role_id = 2
+	) 
+AS member_medical_register
+LEFT JOIN public.vaccine v 
+ON member_medical_register.vaccine_id = v.id
+
+
+
+
+
+
